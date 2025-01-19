@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const dotEnv = require("dotenv");
 const authRouter = require("./routes/auth/auth-routes");
 const adminProductsRouter = require("./routes/admin/products-routes");
 const adminOrderRouter = require("./routes/admin/order-routes");
@@ -18,7 +19,7 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 const registerUser  = require("./controllers/auth/auth-controller");
 
 
-
+dotEnv.config();
 
 
 mongoose.connect("mongodb://localhost:27017/Ecommerce").then(() => {
@@ -29,6 +30,7 @@ mongoose.connect("mongodb://localhost:27017/Ecommerce").then(() => {
 
 
 const app = express()
+
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
