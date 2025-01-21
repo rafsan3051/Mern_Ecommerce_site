@@ -1,7 +1,7 @@
-const bkash = require("bKash-node");
+const bkash = require("paypal-rest-sdk");
 
-bkash.configure({
-    mode: "",
+paypal.configure({
+    mode: "sandbox",
     client_id: "",
     client_secret: "",
   });
